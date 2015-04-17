@@ -1,1 +1,1 @@
-# sails-hook-raven-node
+# sails-hook-sentry
