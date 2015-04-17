@@ -1,7 +1,7 @@
 {
-  "name": "sails-hook-raven-node",
+  "name": "sails-hook-sentry",
   "version": "1.0.0",
-  "description": "",
+  "description": "Sails hook for Sentry(raven-node)",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -24,13 +24,5 @@
   },
   "dependencies": {
     "raven": "^0.7.3"
-  },
-  "gitHead": "2a6f5181f49e71faab1232340e8638903095c434",
-  "readme": "# sails-hook-raven-node\n",
-  "readmeFilename": "README.md",
-  "_id": "sails-hook-raven-node@1.0.0",
-  "_shasum": "0d44a4b95457bbbe561323d07b84355de640a5a0",
-  "_from": "git://github.com/listepo/sails-hook-raven-node.git",
-  "_resolved": "git://github.com/listepo/sails-hook-raven-node.git#2a6f5181f49e71faab1232340e8638903095c434",
-  "_fromGithub": true
+  }
 }
