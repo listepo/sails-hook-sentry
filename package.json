@@ -1,28 +1,41 @@
 {
   "name": "sails-hook-sentry",
-  "version": "1.0.0",
+  "version": "1.0.0-beta.1",
   "description": "Sails hook for Sentry(raven-node)",
   "main": "index.js",
+  "keywords": [
+    "raven",
+    "sentry",
+    "node",
+    "errors",
+    "debugging",
+    "exceptions",
+    "sails",
+    "hook"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/listepo/sails-hook-raven-node.git"
+    "url": "https://github.com/listepo/sails-hook-sentry.git"
   },
-  "author": "",
+  "author": "Ivan Tugay <listepo@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/listepo/sails-hook-raven-node/issues"
+    "url": "https://github.com/listepo/sails-hook-sentry/issues"
   },
-  "homepage": "https://github.com/listepo/sails-hook-raven-node",
+  "homepage": "https://github.com/listepo/sails-hook-sentry",
   "sails": {
     "isHook": true
   },
-  "devDependencies": {
-    "sails": "^0.11.0"
+  "engines": {
+    "node": ">= 0.12"
   },
   "dependencies": {
     "raven": "^0.7.3"
+  },
+  "devDependencies": {
+    "sails": "^0.11.0"
   }
 }

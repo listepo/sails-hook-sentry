@@ -32,6 +32,11 @@ module.exports = function(sails) {
         return cb();
       }
 
+      if (!sails.config[this.configKey].dsn) {
+        sails.log.verbose("DSN for Sentry is required.");
+        return cb();
+      }
+
       var client = new raven.Client(
           sails.config[this.configKey].dsn,
           {
