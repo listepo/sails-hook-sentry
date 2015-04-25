@@ -1,5 +1,3 @@
-var raven = require('raven');
-
 module.exports = function(sails) {
 
   return {
@@ -37,16 +35,16 @@ module.exports = function(sails) {
         return cb();
       }
 
+      var raven = require('raven');
       var client = new raven.Client(
-          sails.config[this.configKey].dsn,
-          {
-              level: sails.config[this.configKey].level
-          }
-          );
+        sails.config[this.configKey].dsn, {
+          level: sails.config[this.configKey].level
+        }
+      );
 
       sails.sentry = client;
       sails.on('router:request:500', function(err) {
-          client.captureError(err);
+        client.captureError(err);
       });
       // We're done initializing.
       return cb();
