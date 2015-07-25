@@ -1,6 +1,6 @@
 {
   "name": "sails-hook-sentry",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Sails hook for Sentry(raven-node)",
   "main": "index.js",
   "keywords": [
@@ -35,7 +35,7 @@
     "iojs": ">= 1.0.0"
   },
   "dependencies": {
-    "raven": "^0.7.3"
+    "raven": "^0.8.1"
   },
   "devDependencies": {
     "sails": "^0.11.0"
