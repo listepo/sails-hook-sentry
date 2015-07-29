@@ -2,6 +2,10 @@
 
 [Sails JS](http://sailsjs.org) hook to log errors and stack traces in [Sentry](https://github.com/getsentry/sentry) from within your Sails.js applications.
 
+[![npm version](https://badge.fury.io/js/sails-hook-sentry.svg)](http://badge.fury.io/js/sails-hook-sentry)
+[![Dependency Status](https://david-dm.org/listepo/sails-hook-sentry.svg)](https://david-dm.org/listepo/sails-hook-sentry)
+[![devDependency Status](https://david-dm.org/listepo/sails-hook-sentry/dev-status.svg)](https://david-dm.org/listepo/sails-hook-sentry#info=devDependencies)
+
 ### Installation
 
 `npm install sails-hook-sentry`
