@@ -5,6 +5,7 @@
 [![npm version](https://badge.fury.io/js/sails-hook-sentry.svg)](http://badge.fury.io/js/sails-hook-sentry)
 [![Dependency Status](https://david-dm.org/listepo/sails-hook-sentry.svg)](https://david-dm.org/listepo/sails-hook-sentry)
 [![devDependency Status](https://david-dm.org/listepo/sails-hook-sentry/dev-status.svg)](https://david-dm.org/listepo/sails-hook-sentry#info=devDependencies)
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
 
 ### Installation
 
