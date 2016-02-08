@@ -1,4 +1,4 @@
-module.exports = function (sails) {
+module.exports = function Sentry(sails) {
   return {
     /**
      * Default configuration
@@ -19,33 +19,32 @@ module.exports = function (sails) {
     /**
      * Initialize the hook
      * @param  {Function} cb Callback for when we're done initializing
+     * @return {Function} cb Callback for when we're done initializing
      */
-    initialize: function (cb) {
-
+    initialize: function(cb) {
       if (!sails.config[this.configKey].active) {
-        sails.log.verbose('Autoreload hook deactivated.')
-        return cb()
+        sails.log.verbose('Autoreload hook deactivated.');
+        return cb();
       }
 
       if (!sails.config[this.configKey].dsn) {
-        sails.log.verbose('DSN for Sentry is required.')
-        return cb()
+        sails.log.verbose('DSN for Sentry is required.');
+        return cb();
       }
 
-      var raven = require('raven')
+      var raven = require('raven');
       var client = new raven.Client(
         sails.config[this.configKey].dsn, {
           level: sails.config[this.configKey].level
         }
-      )
+      );
 
-      sails.sentry = client
-      sails.on('router:request:500', function (err) {
-        client.captureError(err)
-      })
+      sails.sentry = client;
+      sails.on('router:request:500', function(err) {
+        client.captureError(err);
+      });
       // We're done initializing.
-      return cb()
-
+      return cb();
     }
-  }
-}
+  };
+};

@@ -1,6 +1,6 @@
 {
   "name": "sails-hook-sentry",
-  "version": "1.1.0",
+  "version": "1.2.0-rc.1",
   "description": "Sails hook for Sentry(raven-node)",
   "main": "index.js",
   "keywords": [
@@ -29,17 +29,12 @@
   "sails": {
     "isHook": true
   },
-  "engines": {
-    "node": ">= 0.10",
-    "npm": ">= 1.4.0",
-    "iojs": ">= 1.0.0"
-  },
   "dependencies": {
-    "raven": "^0.8.1"
+    "raven": "^0.10.0"
   },
   "devDependencies": {
-    "sails": "^0.11.0",
     "eslint": "^1.0.0-rc-3",
-    "eslint-config-standard": "^4.0.0-5"
+    "eslint-config-google": "^0.3.0",
+    "sails": "^0.12.0"
   }
 }
