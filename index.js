@@ -12,7 +12,7 @@ module.exports = function Sentry(sails) {
         // Set autoreload to be active by default
         active: true,
         dsn: null,
-        level: 'error'
+        options: {}
       }
     },
 
@@ -22,26 +22,23 @@ module.exports = function Sentry(sails) {
      * @return {Function} cb Callback for when we're done initializing
      */
     initialize: function(cb) {
-      if (!sails.config[this.configKey].active) {
+      var settings = sails.config[this.configKey];
+      if (!settings.active) {
         sails.log.verbose('Autoreload hook deactivated.');
         return cb();
       }
 
-      if (!sails.config[this.configKey].dsn) {
+      if (!settings.dsn) {
         sails.log.verbose('DSN for Sentry is required.');
         return cb();
       }
 
-      var raven = require('raven');
-      var client = new raven.Client(
-        sails.config[this.configKey].dsn, {
-          level: sails.config[this.configKey].level
-        }
-      );
+      var Raven = require('raven');
+      Raven.config(settings.dsn, settings.options).install();
 
-      sails.sentry = client;
+      sails.sentry = Raven;
       sails.on('router:request:500', function(err) {
-        client.captureError(err);
+        Raven.captureException(err);
       });
       // We're done initializing.
       return cb();

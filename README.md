@@ -7,12 +7,13 @@
 [![devDependency Status](https://david-dm.org/listepo/sails-hook-sentry/dev-status.svg)](https://david-dm.org/listepo/sails-hook-sentry#info=devDependencies)
 
 
-### Installation
+## Installation
 
 `npm install sails-hook-sentry`
 
 ### Usage
-*requires at least sails >= 0.11*
+
+* requires at least sails >= 0.11*
 
 ### Configuration
 
@@ -25,7 +26,11 @@ By default, configuration lives in `sails.config.sentry`.  The configuration key
 module.exports.sentry = {
   active: true,
   dsn: "{{ DSN }}",
-  level: 'error'
+  options: {
+    logger: 'default',
+    release: '1.0.0',
+    environment: 'staging'
+  }
 };
 ```
 
@@ -39,10 +44,13 @@ module.exports.sentry = {
  */
 
 module.exports = {
-	find: function(req, res) {
-		sails.sentry.captureMessage("Another message");
-		res.ok('ok');
-	}
+  find: function(req, res) {
+    sails.sentry.captureMessage("Another message");
+    res.ok('ok');
+  }
 };
 ```
-More *sails.sentry* methods [raven-node](https://github.com/getsentry/raven-node)
+
+> sails.sentry alias for Raven client
+
+More *sails.sentry* methods [raven-node](https://docs.sentry.io/clients/node/)
