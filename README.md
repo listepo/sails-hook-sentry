@@ -51,6 +51,13 @@ module.exports = {
 };
 ```
 
+If you want to log 500 responses, add this to your responses/serverError.js
+
+```javascript
+// log error with sentry hook
+if(sails.sentry) sails.sentry.captureException(data);
+```
+
 > sails.sentry alias for Raven client
 
 More *sails.sentry* methods [raven-node](https://docs.sentry.io/clients/node/)
