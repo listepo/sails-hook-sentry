@@ -37,9 +37,13 @@ module.exports = function Sentry(sails) {
       Raven.config(settings.dsn, settings.options).install();
 
       sails.sentry = Raven;
-      sails.on('router:request:500', function(err) {
-        Raven.captureException(err);
+
+      // handles Bluebird's promises unhandled rejections
+      process.on('unhandledRejection', function(reason) {
+        console.error('Unhandled rejection:', reason);
+        Raven.captureException(reason);
       });
+
       // We're done initializing.
       return cb();
     }
